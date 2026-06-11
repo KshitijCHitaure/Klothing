@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Klothing</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" alt="Klothing Logo" class="logo">
+                <h2>Klothing</h2>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+
+            <div class="icons">
+                <a href="cart.html">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="page-banner">
+        <h1>Our Collection</h1>
+        <p>Explore premium fashion from Klothing.</p>
+    </section>
+
+
+    <section class="filters">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="T-Shirt">T-Shirts</option>
+            <option value="Hoodie">Hoodies</option>
+            <option value="Jacket">Jackets</option>
+            <option value="Jeans">Jeans</option>
+        </select>
+
+    </section>
+
+
+    <section class="products-section">
+
+        <div id="productContainer" class="product-grid">
+
+
+
+        </div>
+
+    </section>
+
+
+    <div id="productModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close-btn">&times;</span>
+
+            <img id="modalImage" src="" alt="">
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalPrice"></p>
+
+            <p id="modalDescription"></p>
+
+            <div class="product-options">
+
+                <label>Size</label>
+
+                <select id="sizeSelect">
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+
+                <label>Color</label>
+
+                <select id="colorSelect">
+                    <option>Black</option>
+                    <option>White</option>
+                    <option>Blue</option>
+                    <option>Red</option>
+                </select>
+
+            </div>
+
+            <button id="addCartBtn" class="btn">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h3>Klothing</h3>
+                <p>Premium fashion for everyone.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a><br>
+                <a href="products.html">Products</a><br>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+
+                <a href="https://wa.me/918317316235">
+                    WhatsApp Us
+                </a>
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Klothing. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
