@@ -3,267 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klothing | kshitijchitaure.com</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+    <title>Klothing - Fashion Store</title>
 
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
 <body>
 
-    <!-- HEADER -->
+    
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <img src="logo.png" alt="Klothing Logo">
+            <div class="logo-container">
+                <img src="logo.png" alt="Klothing Logo" class="logo">
                 <h2>Klothing</h2>
             </div>
 
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#categories">Categories</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
 
-            <div class="nav-icons">
-                <button id="loginBtn">Login</button>
-
-                <div class="cart-icon">
+            <div class="icons">
+                <a href="cart.html">
                     <i class="fas fa-shopping-cart"></i>
-                    <span id="cart-count">0</span>
-                </div>
+                </a>
             </div>
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="hero">
+   
+    <section class="hero">
+
         <div class="hero-content">
-            <h1>STYLE THAT SPEAKS</h1>
+
+            <h1>Elevate Your Style</h1>
+
             <p>
-                Discover premium fashion for Men, Women and Accessories.
+                Discover premium fashion collections with modern designs,
+                comfort, and quality.
             </p>
 
-            <a href="#products" class="shop-btn">
-                Shop Collection
+            <a href="products.html" class="btn">
+                Shop Now
             </a>
+
         </div>
+
     </section>
 
-    <!-- SEARCH -->
-    <section class="search-section">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search products..."
-        >
-    </section>
 
-    <!-- CATEGORIES -->
-    <section id="categories" class="categories">
+    <section class="categories">
+
         <h2>Shop By Category</h2>
 
         <div class="category-container">
 
             <div class="category-card">
-                <h3>Men</h3>
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" alt="">
+                <h3>T-Shirts</h3>
             </div>
 
             <div class="category-card">
-                <h3>Women</h3>
+                <img src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea" alt="">
+                <h3>Hoodies</h3>
             </div>
 
             <div class="category-card">
-                <h3>Shoes</h3>
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="">
+                <h3>Jackets</h3>
             </div>
 
             <div class="category-card">
-                <h3>Accessories</h3>
+                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" alt="">
+                <h3>Jeans</h3>
             </div>
 
         </div>
-    </section>
-
-    <!-- PRODUCTS -->
-    <section id="products" class="products">
-
-        <h2>Featured Products</h2>
-
-        <div class="product-container">
-
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"
-                    alt="T-Shirt">
-
-                <h3>White T-shirt</h3>
-
-                <p class="price">₹999</p>
-
-                <button class="add-cart"
-                    data-name="White T-shirt"
-                    data-price="999">
-                    Add To Cart
-                </button>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500"
-                    alt="Jacket">
-
-                <h3>Leather Jacket</h3>
-
-                <p class="price">₹1499</p>
-
-                <button class="add-cart"
-                    data-name="Leather Jacket"
-                    data-price="1499">
-                    Add To Cart
-                </button>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"
-                    alt="Shoes">
-
-                <h3>Classic Sneakers</h3>
-
-                <p class="price">₹2499</p>
-
-                <button class="add-cart"
-                    data-name="Classic Sneakers"
-                    data-price="2499">
-                    Add To Cart
-                </button>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=500"
-                    alt="Women Top">
-
-                <h3>Women's Top</h3>
-
-                <p class="price">₹899</p>
-
-                <button class="add-cart"
-                    data-name="Women's Top"
-                    data-price="899">
-                    Add To Cart
-                </button>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?w=500"
-                    alt="Cap">
-
-                <h3>Fashion Cap</h3>
-
-                <p class="price">₹1999</p>
-
-                <button class="add-cart"
-                    data-name="Fashion Cap"
-                    data-price="1999">
-                    Add To Cart
-                </button>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=500"
-                    alt="Vest">
-
-                <h3>Vest</h3>
-
-                <p class="price">₹499</p>
-
-                <button class="add-cart"
-                    data-name="Vest"
-                    data-price="499">
-                    Add To Cart
-                </button>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CART -->
-    <section class="cart-section">
-
-        <h2>Your Cart</h2>
-
-        <div id="cart-items">
-
-        </div>
-
-        <h3>
-            Total:
-            ₹<span id="total-price">0</span>
-        </h3>
-
-        <button id="checkoutBtn">
-            Buy Through Instagram
-        </button>
 
     </section>
 
-    <!-- LOGIN MODAL -->
-    <div class="modal" id="loginModal">
 
-        <div class="modal-content">
+    <section class="featured">
 
-            <span class="close">&times;</span>
+        <h2>Trending Products</h2>
 
-            <h2>Login</h2>
+        <div id="featuredProducts" class="product-grid">
 
-            <form>
 
-                <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                >
-
-                <input
-                    type="password"
-                    placeholder="Password"
-                    required
-                >
-
-                <button type="submit">
-                    Login
-                </button>
-
-            </form>
 
         </div>
 
-    </div>
+    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
 
-        <h2>Contact Us</h2>
+    <section class="features">
 
-        <p>Email: support@kshitijchitaure.com</p>
+        <div class="feature-box">
+            <i class="fas fa-truck"></i>
+            <h3>Fast Delivery</h3>
+            <p>Quick delivery across India.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Secure Payments</h3>
+            <p>Safe and trusted checkout process.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-exchange-alt"></i>
+            <h3>Easy Returns</h3>
+            <p>Simple return and exchange policy.</p>
+        </div>
+
+    </section>
+
+
+    <section class="newsletter">
+
+        <h2>Stay Updated</h2>
 
         <p>
-            Instagram:
-            @mousam_d_shady
+            Subscribe for new arrivals and exclusive offers.
         </p>
 
+        <form>
+            <input
+                type="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+            </button>
+        </form>
+
     </section>
 
-    <!-- FOOTER -->
+
     <footer>
 
-        <p>
-            © 2026 Klothing |
-            kshitijchitaure.com
+        <div class="footer-content">
+
+            <div>
+                <h3>Klothing</h3>
+                <p>Premium fashion for everyone.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+
+                <a href="products.html">Products</a><br>
+                <a href="about.html">About</a><br>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+
+                <p>WhatsApp:</p>
+
+                <a href="https://wa.me/918317316235">
+                    +91 8317316235
+                </a>
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Klothing. All Rights Reserved.
         </p>
 
     </footer>
