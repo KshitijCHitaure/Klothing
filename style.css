@@ -567,3 +567,26 @@ footer{
     opacity:1;
     transform:translateY(0);
 }
+
+.product-desc{
+    color:#9ca3af;
+    font-size:.85rem;
+    margin-bottom:12px;
+    line-height:1.4;
+}
+
+.product-options{
+    display:flex;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.product-options select{
+    flex:1;
+    font-size:.85rem;
+}
+
+.product-info .btn{
+    width:100%;
+    text-align:center;
+}

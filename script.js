@@ -215,10 +215,30 @@ alt="${product.name}">
 
 <p>${product.category}</p>
 
+<p class="product-desc">${product.description}</p>
+
+<div class="product-options">
+
+<select id="size-${product.id}">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<select id="color-${product.id}">
+<option>Black</option>
+<option>White</option>
+<option>Blue</option>
+<option>Red</option>
+</select>
+
+</div>
+
 <button
 class="btn"
-onclick="openModal(${product.id})">
-View Details
+onclick="addToCart(${product.id})">
+Add To Cart
 </button>
 
 </div>
@@ -232,6 +252,7 @@ View Details
 }
 
 displayProducts(products);
+
 
 
 
@@ -294,45 +315,8 @@ displayProducts(filteredProducts);
 
 
 
-function openModal(id){
 
-const product =
-products.find(item => item.id === id);
 
-const modal =
-document.getElementById("productModal");
-
-if(!modal) return;
-
-document.getElementById("modalImage")
-.src = product.image;
-
-document.getElementById("modalTitle")
-.innerText = product.name;
-
-document.getElementById("modalPrice")
-.innerText = "₹" + product.price;
-
-document.getElementById("modalDescription")
-.innerText = product.description;
-
-modal.style.display = "block";
-
-}
-
-const closeBtn =
-document.querySelector(".close-btn");
-
-if(closeBtn){
-
-closeBtn.addEventListener("click",()=>{
-
-document.getElementById("productModal")
-.style.display = "none";
-
-});
-
-}
 
 
 
@@ -392,22 +376,31 @@ function addToCart(productId){
     const product =
     products.find(item => item.id === productId);
 
-    if(product){
+    if(!product) return;
 
-        cart.push(product);
+    const sizeEl =
+    document.getElementById("size-" + productId);
 
-        localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
-        );
+    const colorEl =
+    document.getElementById("color-" + productId);
 
-        updateCartCount();
-        showToast(product.name + " added to cart");
+    const cartItem = {
+        ...product,
+        size: sizeEl ? sizeEl.value : null,
+        color: colorEl ? colorEl.value : null
+    };
 
-    }
+    cart.push(cartItem);
+
+    localStorage.setItem(
+    "cart",
+    JSON.stringify(cart)
+    );
+
+    updateCartCount();
+    showToast(product.name + " added to cart");
 
 }
-
 
 
 
@@ -439,6 +432,9 @@ cartItems.innerHTML += `
 <h3>${item.name}</h3>
 
 <p>₹${item.price}</p>
+
+${item.size ? `<p>Size: ${item.size}</p>` : ""}
+${item.color ? `<p>Color: ${item.color}</p>` : ""}
 
 </div>
 
@@ -645,54 +641,5 @@ cart = [];
 
 
 
-const addCartBtn =
-document.getElementById("addCartBtn");
-
-if(addCartBtn){
-
-addCartBtn.addEventListener(
-"click",
-function(){
-
-const title =
-document.getElementById("modalTitle")
-.innerText;
-
-const product =
-products.find(
-item => item.name === title
-);
-
-if(product){
-
-addToCart(product.id);
-
-document.getElementById(
-"productModal"
-).style.display = "none";
-
-}
-
-});
-
-}
 
 
-
-
-
-window.onclick = function(event){
-
-const modal =
-document.getElementById("productModal");
-
-if(
-modal &&
-event.target === modal
-){
-
-modal.style.display = "none";
-
-}
-
-};
